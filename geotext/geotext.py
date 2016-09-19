@@ -125,5 +125,5 @@ class GeoText(object):
             Counter(self.country_mentions).most_common())
 
 if __name__ == '__main__':
-    print GeoText('New York and the American people from Kansas').country_mentions
-    print GeoText('In a filing with the Hong Kong bourse, the Chinese cement producer said ...').countries
+    print(GeoText('New York and the American people from Kansas').country_mentions)
+    print(GeoText('In a filing with the Hong Kong bourse, the Chinese cement producer said ...').countries)
