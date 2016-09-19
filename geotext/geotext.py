@@ -48,11 +48,11 @@ def read_table(filename, usecols=(0, 1), sep='\t', comment='#', encoding='utf-8'
             next(f)
 
         # filter comment lines
-        lines = (line for line in f if not line.startswith(comment))
+        lines = (line for line in f if not line.startswith(comment.encode())
 
         d = dict()
         for line in lines:
-            columns = line.split(sep)
+            columns = line.split(sep.encode())
             key = columns[usecols[0]].decode(encoding).lower()
             value = columns[usecols[1]].decode(encoding).rstrip('\n')
             d[key] = value
